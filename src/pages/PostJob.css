@@ -1,0 +1,28 @@
+.post-job-form {
+  max-width: 800px;
+}
+
+.textarea-field {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.mt-4 {
+  margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
