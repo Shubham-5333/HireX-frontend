@@ -79,6 +79,24 @@
   background: rgba(0, 0, 0, 0.3);
   z-index: 999;
 }
+.logout-btn {
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  margin-top: 50vh;
+}
+
+/* Hover */
+.logout-btn:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff4d4f;
+  border-color: #ff4d4f;
+}
 
 /* 📱 Mobile Styles */
 @media (max-width: 773px) {

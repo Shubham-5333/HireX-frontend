@@ -6,20 +6,29 @@ import Home from './pages/Home';
 import PostJob from './pages/PostJob';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import Profile from './pages/Profile';
+import { useSelector } from 'react-redux';
+
 
 function App() {
+  // const isLoggedIn = useSelector((state)=>state.authentication.isAuthenticated)
   return (
     <BrowserRouter>
+        <ToastContainer/>
       <Routes>
+        
         {/* Main Application Layout for protected/internal routes */}
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="find-job" element={<FindJob />} />
           <Route path="post-job" element={<PostJob />} />
+          <Route path="profile" element={<Profile />}/>
         </Route>
-        
+
         {/* Auth routes without MainLayout */}
-        <Route path="/login" element={<Login />} />
+        <Route path="/login"element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>

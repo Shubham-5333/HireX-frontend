@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link, useNavigate } from 'react-router-dom';
 import { FiPlusCircle, FiSearch } from 'react-icons/fi';
 import { RiMenuLine } from 'react-icons/ri';
 import './Sidebar.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutUser } from '../features/authSlice';
 
 const Sidebar = () => {
+  const navigate = useNavigate()
+  // const isloggedOut = useSelector((state)=>state.authentication)
+  const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLinkClick = () => {
-    setIsOpen(false); // auto close on mobile
+    setIsOpen(false); 
   };
+
+  const handleLogout = ()=>{
+    
+    dispatch(logoutUser())
+  
+    navigate('/')
+  }
 
   return (
     <>
-      {/* 3-dot Toggle Button */}
       <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
         <RiMenuLine  />
       </button>
@@ -21,7 +32,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
         <div className="sidebar-logo">
-          <h2>HireX</h2>
+         <Link to='/'> <h2>HireX</h2></Link>
         </div>
 
         <nav className="sidebar-nav">
@@ -49,6 +60,7 @@ const Sidebar = () => {
                 <FiPlusCircle /> <span>Post a Job</span>
               </NavLink>
             </li>
+            <button type='submit' className='logout-btn' onClick={handleLogout}>logout</button>
           </ul>
         </nav>
       </aside>
