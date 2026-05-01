@@ -55,6 +55,11 @@
   color: var(--text-muted);
   margin-bottom: 16px;
 }
+.job-description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
 
 .job-meta {
   display: flex;
