@@ -29,7 +29,7 @@ const Register = () => {
     e.preventDefault()
     console.log("helll  ", formData);
     try {
-      const response = await fetch("http://localhost:5000/api/register", {
+      const response = await fetch("https://hirex-backend-hlth.onrender.com/api/register", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"

@@ -23,7 +23,7 @@ const FindJob = () => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const response = await fetch('http://localhost:5000/api/findJob', {
+      const response = await fetch('https://hirex-backend-hlth.onrender.com/api/findJob', {
         method: 'GET',
         credentials: 'include'
       })
@@ -41,7 +41,7 @@ const FindJob = () => {
   const handleApply =async (jobId) => {
     
     try {
-      const response = await fetch('http://localhost:5000/api/applyJob',{
+      const response = await fetch('https://hirex-backend-hlth.onrender.com/api/applyJob',{
         method:'POST',
         credentials:'include',
         headers:{

@@ -62,7 +62,7 @@ const AppliedJobs = () => {
 
     useEffect(() => {
         const appliedData = async () => {
-            const response = await fetch("http://localhost:5000/api/appliedJobs", {
+            const response = await fetch("https://hirex-backend-hlth.onrender.com/api/appliedJobs", {
                 method: 'GET',
                 credentials: 'include'
             })
